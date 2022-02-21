@@ -37,13 +37,33 @@ console.log(espace);
 console.log(space);
 
 
-// reverse  'Sara' => araS
+// reverse  ex : 'Sara' => araS
 
 let reverse = '';
 for(i=numChar2 -1 ; i>=0; i--){
 reverse += hacker2[i];
 }
 console.log(reverse);
+
+// 3.3 Depending on the lexicographic order of the strings, print:
+let compare = hacker1.localeCompare(hacker2);
+
+switch(compare){
+
+    case -1 : 
+        console.log("The driver's name goes first.");
+        break;
+    case 1 :
+        console.log("Yo, the navigator goes first definitely.");
+        break;
+    case 0 :
+        console.log("What?! You both have the same name?");
+        break;
+    default :
+    console.log("something get wrong !");
+    break;
+}
+
 
 
 
