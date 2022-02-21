@@ -64,6 +64,39 @@ switch(compare){
     break;
 }
 
+// Bonus 1 :
+let lorem = `
+Quisque ut turpis sollicitudin, et sollicitudin massa non, elementum felis. Nunc metus magna, pretium sed varius vel, mattis sed nunc. Sed sollicitudin mi placerat, convallis metus in, ultrices nulla. Proin vehicula arcu quis magna sollicitudin, vel varius orci commodo. Nulla hendrerit ante non urna vehicula bibendum. Duis pharetra quam libero, in mattis nisi convallis nec. Sed sollicitudin dapibus arcu, nec ullamcorper tortor tristique vitae. Cras quis rhoncus lectus. Maecenas eleifend justo non eros lobortis pretium. Sed a arcu nulla. Etiam dignissim metus at ex sollicitudin volutpat eget eget turpis.
+
+Praesent vitae dui sit amet est cursus placerat ut ac est. Praesent nec elementum massa. Nam a justo rhoncus, consectetur nulla sit amet, sollicitudin justo. Aliquam tristique gravida ipsum, non varius quam finibus eget. Vivamus semper gravida nunc, ut elementum lectus. Sed non tincidunt magna. Phasellus lacinia imperdiet gravida. Vestibulum nec fermentum massa. Pellentesque aliquam sed est in laoreet. Nullam nec mi sem. Praesent auctor lectus urna. Sed semper lobortis egestas. Integer consectetur dui non nunc mattis auctor.
+
+Aenean a egestas nisl, nec pharetra et nisi. Sed justo tortor, lacinia vitae gravida vel, mollis ac lacus. Vestibulum dui augue, varius non placerat ut, euismod ut ipsum. Sed leo erat, tempus non accumsan quis, blandit nec eros. Quisque vestibulum leo odio. Sed semper mi eget orci fermentum bibendum. Vivamus vestibulum scelerisque malesuada. Integer ex leo, fermentum at nunc sit amet, tristique mattis enim. Nulla facilisi. Phasellus non commodo eros, vel interdum lorem. Cras nibh mi, porttitor a libero quis, cursus varius massa. Maecenas id lobortis purus.
+`;
 
 
+function countWords(text){
+    let totalWords = 0;
+    for(let i=0; i<text.length; i++){
+        if(text[i]===' '){
+            totalWords++;
+        }
+    }
+    console.log("Il y a "+totalWords+" mots.");
+    return totalWords;
+}
 
+countWords(lorem);
+
+function etCount(text){
+    let etTotal = 0;
+    let separator = " " || "." || "," || "!";
+    for(let i=0; i<text.length; i++){
+        if(text[i]==='e' && text[i+1]==='t' && text[i+2]===separator && text[i-1]===separator){
+            etTotal++;
+        }
+    }
+    console.log(`Le mot 'et' apparait ${etTotal} fois`);
+    return etTotal;
+}
+
+etCount(lorem);
