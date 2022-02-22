@@ -102,38 +102,42 @@ function etCount(text){
 etCount(lorem);
 
 // Bonus 2 :
-
-let phraseToCheck = "Amor, Roma";
+console.log("---BONUS 2---");
+let phraseToCheck = "Amor, Rma";
 
 console.log(phraseToCheck[0]);
 console.log(phraseToCheck[phraseToCheck.length -1]);
 
 
+// 1. Function n°1 nettoyer la string.
+function cleanString(text){
 
-function isPalindrom(text){
-
-    let palindrome = false;
-    let separator = " " || "." || "," || "!" || "?";
     let newString = "";
-    
-
-    // 1. On nettoie la string.
-    for(let j=0; j<text.length; j++){
-        if(text[j] === " " || text[j] === "." || text[j]=== ","){
-            text[j] = "";
-            newString += text[j];
+    for(let i=0; i<text.length; i++){
+        switch(text[i]){
+            case " ":
+            case ".":
+            case ",":
+            case "!":
+            case "?":
+                continue; // ou alors je l'ignore directement.
+                console.log("Il y a séparareur")
+                text[i] = ""; // je supprime/remplace text[i]
+                newString += text[i];
+            default :
+            newString += text[i];
         }
-        else{
-            newString += text[j];
-        } 
     }
-console.log(newString + " = newstring");
+    console.log(newString);
 
-    // 2. On boucle pour vérifier le palindrome
+// 2. On boucle pour vérifier le palindrome
     let lower = newString.toLowerCase();
-    console.log(lower[lower.length -1] + " : lower.length");
-    console.log(lower[4] + " : test");
-    console.log(lower);
+    console.log(lower + ": lower string");
+    let palindrome = false;
+//     console.log(lower[lower.length -1] + " : lower.length");
+//     console.log(lower[0] + " : test");
+//     console.log(lower[4] + " : test");
+//     console.log(lower);
 
     for(let i=0; i<lower.length; i++){
         if(lower[i] === lower[(lower.length -1)-i]){
@@ -141,12 +145,14 @@ console.log(newString + " = newstring");
             palindrome = true;
         }
         else{
-            palindrome = false
+            palindrome = false;
+            console.log(` ${lower} n'est pas un palindrome `);
+            break;
         }
     }
 
-console.log(palindrome);
+    console.log(` Palindrome est ${palindrome}`);
     return palindrome;
 }
 
-isPalindrom(phraseToCheck);
+cleanString(phraseToCheck);
