@@ -117,7 +117,7 @@ function isPalindrom(text){
     console.log(lower[0] + " : test");
 
     for(let i=0; i<lower.length; i++){
-        if(text[i] === (lower[lower.length -1] -i)){
+        if(lower[i] === (lower[lower.length -1] -i)){
             console.log("ok");
         }
         else{
