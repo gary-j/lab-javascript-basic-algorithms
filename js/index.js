@@ -100,3 +100,30 @@ function etCount(text){
 }
 
 etCount(lorem);
+
+// Bonus 2 :
+
+let phraseToCheck = "Amor, Roma";
+
+console.log(phraseToCheck[0]);
+console.log(phraseToCheck[phraseToCheck.length -1]);
+
+
+
+function isPalindrom(text){
+
+    let lower = text.toLowerCase();
+    console.log(lower[lower.length -1] + " : lower.length");
+    console.log(lower[0] + " : test");
+
+    for(let i=0; i<lower.length; i++){
+        if(text[i] === (lower[lower.length -1] -i)){
+            console.log("ok");
+        }
+        else{
+            console.log('probleme');
+        }
+    }
+}
+
+isPalindrom(phraseToCheck);
