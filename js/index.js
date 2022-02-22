@@ -112,18 +112,41 @@ console.log(phraseToCheck[phraseToCheck.length -1]);
 
 function isPalindrom(text){
 
-    let lower = text.toLowerCase();
-    console.log(lower[lower.length -1] + " : lower.length");
-    console.log(lower[0] + " : test");
+    let palindrome = false;
+    let separator = " " || "." || "," || "!" || "?";
+    let newString = "";
+    
 
-    for(let i=0; i<lower.length; i++){
-        if(lower[i] === lower[(lower.length -1)-i] ){
-            console.log("ok");
+    // 1. On nettoie la string.
+    for(let j=0; j<text.length; j++){
+        if(text[j] === " " || text[j] === "." || text[j]=== ","){
+            text[j] = "";
+            newString += text[j];
         }
         else{
-            console.log('probleme');
+            newString += text[j];
+        } 
+    }
+console.log(newString + " = newstring");
+
+    // 2. On boucle pour vérifier le palindrome
+    let lower = newString.toLowerCase();
+    console.log(lower[lower.length -1] + " : lower.length");
+    console.log(lower[4] + " : test");
+    console.log(lower);
+
+    for(let i=0; i<lower.length; i++){
+        if(lower[i] === lower[(lower.length -1)-i]){
+            console.log("ok pour : " + lower[i]);
+            palindrome = true;
+        }
+        else{
+            palindrome = false
         }
     }
+
+console.log(palindrome);
+    return palindrome;
 }
 
 isPalindrom(phraseToCheck);
